@@ -1,0 +1,1 @@
+@py.exe C:\Users\ljuskelis\Desktop\LaurenJuskelis\Cursos\IDLE\birthdays.py %*
