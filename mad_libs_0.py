@@ -1,0 +1,26 @@
+# This program lets the user play Mad Libs, using a string as the source
+# data. 
+
+import re
+
+# Create a function to replace buzz words:
+
+def mad_libs_function(our_file):
+    tester = 1
+    mad_libs_re = re.compile(r'ADJECTIVE|NOUN|ADVERB|VERB')
+    while tester == 1:
+        try: 
+            our_re = mad_libs_re.search(our_file)
+            our_re.group()
+            print('Enter a word that is a/an ' + str(our_re.group()))
+            word = input()
+            our_file = mad_libs_re.sub(word, our_file, 1)
+        except AttributeError:
+            tester = 0
+    return our_file
+
+# Use the function on a string:
+
+my_file = 'The ADJECTIVE panda walked to the NOUN and then VERB. A nearby NOUN was unaffected by these events.'
+
+print(mad_libs_function(my_file))
